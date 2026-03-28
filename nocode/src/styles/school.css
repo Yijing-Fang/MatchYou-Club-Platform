@@ -1,0 +1,657 @@
+/* 学校管理员端公共样式 - 复用社团管理员样式并扩展 */
+.school-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 登录页样式 */
+.school-login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+}
+
+.school-login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.school-login-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.school-login-header p {
+  font-size: 14px;
+  color: #999;
+}
+
+.school-login-form {
+  flex: 1;
+}
+
+.school-login-footer {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 12px;
+  color: #999;
+}
+
+/* 提示框样式 */
+.school-alert {
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 13px;
+}
+
+.school-alert-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #7f1d1d;
+}
+
+.school-alert-success {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+}
+
+.school-alert-warning {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+}
+
+.school-alert-info {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: '#0369a1';
+}
+
+/* 侧边栏 - 学校管理专用深色主题 */
+.school-sidebar {
+  width: 220px;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.school-logo {
+  padding: 24px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.school-logo h2 {
+  font-size: 18px;
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.school-logo p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin: 8px 0 0;
+}
+
+.school-menu {
+  padding: 12px 0;
+}
+
+.school-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+.school-menu-item:hover {
+  color: #fff;
+  background-color: rgba(255,255,255,0.05);
+  border-left-color: rgba(255,255,255,0.3);
+}
+
+.school-menu-item.active {
+  color: #fff;
+  background-color: rgba(64, 158, 255, 0.2);
+  border-left-color: #409EFF;
+}
+
+.school-menu-icon {
+  width: 20px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.school-menu-text {
+  font-size: 14px;
+}
+
+/* 主内容区 */
+.school-main {
+  flex: 1;
+  margin-left: 220px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 顶部导航 */
+.school-header {
+  height: 64px;
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.school-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.school-header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.school-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.school-admin-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.school-logout-btn {
+  padding: 6px 16px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.school-logout-btn:hover {
+  color: #f5222d;
+  border-color: #f5222d;
+}
+
+/* 内容区域 */
+.school-content {
+  flex: 1;
+  padding: 24px;
+  background-color: #f0f2f5;
+}
+
+.school-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* 表单样式 */
+.school-form-group {
+  margin-bottom: 20px;
+}
+
+.school-form-label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.school-form-input,
+.school-form-select,
+.school-form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.school-form-input:focus,
+.school-form-select:focus,
+.school-form-textarea:focus {
+  outline: none;
+  border-color: #409EFF;
+}
+
+.school-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* 按钮样式 */
+.school-btn {
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.school-btn-primary {
+  background-color: #409EFF;
+  color: white;
+}
+
+.school-btn-primary:hover {
+  background-color: #66b1ff;
+}
+
+.school-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.school-btn-success {
+  background-color: #52c41a;
+  color: white;
+}
+
+.school-btn-success:hover {
+  background-color: #73d13d;
+}
+
+.school-btn-danger {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.school-btn-danger:hover {
+  background-color: #ff7875;
+}
+
+.school-btn-default {
+  background-color: #fff;
+  color: #666;
+  border: 1px solid #d9d9d9;
+}
+
+.school-btn-default:hover {
+  color: #409EFF;
+  border-color: #409EFF;
+}
+
+.school-btn-sm {
+  padding: 6px 16px;
+  font-size: 13px;
+}
+
+/* 工具栏 */
+.school-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.school-toolbar-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.school-toolbar-right {
+  display: flex;
+  gap: 12px;
+}
+
+/* 搜索框 */
+.school-search {
+  position: relative;
+}
+
+.school-search input {
+  width: 240px;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.school-search input:focus {
+  outline: none;
+  border-color: #409EFF;
+}
+
+/* 筛选标签 */
+.school-filter-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.school-filter-tag {
+  padding: 6px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: #fff;
+}
+
+.school-filter-tag:hover {
+  border-color: #409EFF;
+  color: #409EFF;
+}
+
+.school-filter-tag.active {
+  background-color: #409EFF;
+  color: white;
+  border-color: #409EFF;
+}
+
+/* 表格样式 */
+.school-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.school-table th,
+.school-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.school-table th {
+  background-color: #fafafa;
+  font-weight: 600;
+  color: #333;
+}
+
+.school-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.school-table .actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* 状态标签 */
+.school-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.school-tag-pending {
+  background-color: #fff7e6;
+  color: #fa8c16;
+  border: 1px solid #ffd591;
+}
+
+.school-tag-passed {
+  background-color: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+.school-tag-rejected {
+  background-color: #fff1f0;
+  color: #f5222d;
+  border: 1px solid #ffa39e;
+}
+
+.school-tag-interview {
+  background-color: #e6f7ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+.school-tag-info {
+  background-color: #e6f7ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+/* 统计卡片 */
+.school-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.school-stat-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.school-stat-value {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.school-stat-label {
+  font-size: 14px;
+  color: #999;
+}
+
+.school-stat-trend {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.school-stat-trend.up {
+  color: #52c41a;
+}
+
+.school-stat-trend.down {
+  color: #f5222d;
+}
+
+/* 图表容器 */
+.school-chart-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.school-chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* 弹窗样式 */
+.school-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.school-modal {
+  background: #fff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.school-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.school-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.school-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.school-modal-close:hover {
+  color: #333;
+}
+
+.school-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+.school-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+/* 详情项 */
+.school-detail-item {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.school-detail-item:last-child {
+  border-bottom: none;
+}
+
+.school-detail-label {
+  width: 100px;
+  color: #666;
+  font-size: 14px;
+}
+
+.school-detail-value {
+  flex: 1;
+  color: #333;
+  font-size: 14px;
+}
+
+/* 移动端菜单按钮 */
+.school-menu-toggle {
+  display: none;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 101;
+  padding: 10px;
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .school-sidebar {
+    width: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s;
+  }
+  
+  .school-sidebar.open {
+    width: 220px;
+    transform: translateX(0);
+  }
+  
+  .school-main {
+    margin-left: 0;
+  }
+  
+  .school-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .school-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .school-search input {
+    width: 100%;
+  }
+  
+  .school-menu-toggle {
+    display: block;
+  }
+}

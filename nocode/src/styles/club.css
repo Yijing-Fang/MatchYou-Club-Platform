@@ -1,0 +1,683 @@
+/* 社团管理员端公共样式 */
+
+/* 关键修复：页面根容器 */
+.club-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 关键修复：布局容器 - 确保全屏 */
+.club-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* 登录页样式 */
+.club-login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+}
+
+.club-login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.club-login-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.club-login-header p {
+  font-size: 14px;
+  color: #999;
+}
+
+.club-login-form {
+  flex: 1;
+}
+
+.club-login-footer {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 12px;
+  color: #999;
+}
+
+/* 关键修复：侧边栏 - 固定定位，覆盖模式 */
+.club-sidebar {
+  width: 220px;
+  background-color: #001529;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+/* 关键修复：侧边栏打开状态 */
+.club-sidebar.open {
+  transform: translateX(0);
+}
+
+/* 关键修复：桌面端始终显示侧边栏 */
+@media (min-width: 769px) {
+  .club-sidebar {
+    transform: translateX(0);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+  }
+}
+
+.club-logo {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.club-logo h2 {
+  font-size: 18px;
+  margin: 0;
+  color: #fff;
+}
+
+.club-logo p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin: 5px 0 0;
+}
+
+.club-menu {
+  padding: 10px 0;
+}
+
+.club-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.club-menu-item:hover {
+  color: #fff;
+  background-color: rgba(255,255,255,0.05);
+}
+
+.club-menu-item.active {
+  color: #fff;
+  background-color: #409EFF;
+}
+
+.club-menu-icon {
+  width: 20px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.club-menu-text {
+  font-size: 14px;
+}
+
+/* 关键修复：遮罩层 */
+.club-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+
+/* 关键修复：主内容区 - 全屏宽度，不被侧边栏推开 */
+.club-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f0f2f5;
+}
+
+/* 关键修复：桌面端内容区保持全宽，侧边栏覆盖在上面 */
+@media (min-width: 769px) {
+  .club-main {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* 顶部导航 */
+.club-header {
+  height: 64px;
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 98;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.club-header-left {
+  display: flex;
+  align-items: center;
+  padding-left: 50px; /* 为移动端菜单按钮留出空间 */
+}
+
+@media (min-width: 769px) {
+  .club-header-left {
+    padding-left: 0; /* 桌面端不需要留出空间 */
+  }
+}
+
+.club-header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.club-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.club-admin-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.club-logout-btn {
+  padding: 6px 16px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.club-logout-btn:hover {
+  color: #409EFF;
+  border-color: #409EFF;
+}
+
+/* 内容区域 - 全宽显示 */
+.club-content {
+  flex: 1;
+  padding: 24px;
+  background-color: #f0f2f5;
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.club-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.club-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* 表单样式 */
+.club-form-group {
+  margin-bottom: 20px;
+}
+
+.club-form-label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.club-form-label .required {
+  color: #f5222d;
+  margin-left: 4px;
+}
+
+.club-form-input,
+.club-form-select,
+.club-form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.club-form-input:focus,
+.club-form-select:focus,
+.club-form-textarea:focus {
+  outline: none;
+  border-color: #409EFF;
+}
+
+.club-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.club-form-input:disabled,
+.club-form-select:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* 按钮样式 */
+.club-btn {
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.club-btn-primary {
+  background-color: #409EFF;
+  color: white;
+}
+
+.club-btn-primary:hover {
+  background-color: #66b1ff;
+}
+
+.club-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.club-btn-default {
+  background-color: #fff;
+  color: #666;
+  border: 1px solid #d9d9d9;
+}
+
+.club-btn-default:hover {
+  color: #409EFF;
+  border-color: #409EFF;
+}
+
+.club-btn-danger {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.club-btn-danger:hover {
+  background-color: #ff7875;
+}
+
+.club-btn-success {
+  background-color: #52c41a;
+  color: white;
+}
+
+.club-btn-success:hover {
+  background-color: #73d13d;
+}
+
+.club-btn-sm {
+  padding: 6px 16px;
+  font-size: 13px;
+}
+
+/* 工具栏 */
+.club-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.club-toolbar-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.club-toolbar-right {
+  display: flex;
+  gap: 12px;
+}
+
+/* 搜索框 */
+.club-search {
+  display: flex;
+  align-items: center;
+}
+
+.club-search input {
+  width: 240px;
+  padding: 8px 12px;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+.club-search button {
+  padding: 8px 16px;
+  background-color: #409EFF;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+/* 表格样式 */
+.club-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.club-table th,
+.club-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.club-table th {
+  background-color: #fafafa;
+  font-weight: 600;
+  color: #333;
+}
+
+.club-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.club-table .actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* 状态标签 */
+.club-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.club-tag-pending {
+  background-color: #fff7e6;
+  color: #fa8c16;
+  border: 1px solid #ffd591;
+}
+
+.club-tag-interview {
+  background-color: #e6f7ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+.club-tag-passed {
+  background-color: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+.club-tag-rejected {
+  background-color: #fff1f0;
+  color: #f5222d;
+  border: 1px solid #ffa39e;
+}
+
+/* 分页 */
+.club-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.club-pagination button {
+  padding: 6px 12px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.club-pagination button:hover:not(:disabled) {
+  color: #409EFF;
+  border-color: #409EFF;
+}
+
+.club-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.club-pagination .active {
+  background-color: #409EFF;
+  color: white;
+  border-color: #409EFF;
+}
+
+/* 数据卡片 */
+.club-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.club-stat-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.club-stat-value {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.club-stat-label {
+  font-size: 14px;
+  color: #999;
+}
+
+.club-stat-trend {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.club-stat-trend.up {
+  color: #52c41a;
+}
+
+.club-stat-trend.down {
+  color: #f5222d;
+}
+
+/* 图表容器 */
+.club-chart-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.club-chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* 上传组件 */
+.club-upload {
+  border: 2px dashed #d9d9d9;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.club-upload:hover {
+  border-color: #409EFF;
+}
+
+.club-upload-icon {
+  font-size: 32px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.club-upload-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 表单字段 */
+.club-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* 筛选标签 */
+.club-filter-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.club-filter-tag {
+  padding: 6px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.club-filter-tag:hover {
+  border-color: #409EFF;
+  color: #409EFF;
+}
+
+.club-filter-tag.active {
+  background-color: #409EFF;
+  color: white;
+  border-color: #409EFF;
+}
+
+/* 移动端菜单按钮 */
+.club-menu-toggle {
+  display: block;
+  position: fixed;
+  left: 10px;
+  top: 16px;
+  z-index: 102;
+  padding: 8px 10px;
+  background: #001529;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 关键修复：桌面端菜单按钮隐藏，侧边栏始终显示 */
+@media (min-width: 769px) {
+  .club-menu-toggle {
+    display: none;
+  }
+  
+  .club-sidebar-overlay {
+    display: none !important;
+  }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .club-sidebar {
+    width: 220px;
+    z-index: 101;
+  }
+  
+  .club-main {
+    width: 100%;
+  }
+  
+  .club-header-left {
+    padding-left: 50px;
+  }
+  
+  .club-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .club-form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .club-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .club-search input {
+    width: 100%;
+  }
+}
